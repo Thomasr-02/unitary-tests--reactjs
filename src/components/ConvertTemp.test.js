@@ -1,20 +1,20 @@
 import React from "react";
-import ConvertTemp from "./ConvertTemp";
 import Adapter from "enzyme-adapter-react-16";
 import { shallow, configure } from "enzyme";
 
+import ConvertTemp from "./ConvertTemp";
 configure({ adapter: new Adapter() });
 
 describe("Verificando métodos de conversão para celsius", () => {
-  const wrapper = shallow(<ConvertTemp></ConvertTemp>);
+  const wrapper = shallow(<ConvertTemp/>);
   test("20°C é igual a 68°F ", () => {
     expect(wrapper.instance().celsiusToFahrenheit(20) === 68).toBeTruthy();
   });
   test("32°C não é maior que 400°K", () => {
     expect(wrapper.instance().celsiusToKelvin(32) > 400).toBeFalsy();
   });
-  test("59,3°C é igual a 138,75°F", () => {
-    expect(wrapper.instance().celsiusToFahrenheit(59.3)).toEqual(138.75);
+  test("59,3°C é igual a 138,7°F", () => {
+    expect(wrapper.instance().celsiusToFahrenheit(59.3)).toEqual(138.74);
   });
 });
 
