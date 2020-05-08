@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './ConvertTemp.css'
+import './ConvertTemp.less'
 
 export default class ConvertTemp extends Component{
     constructor(){
